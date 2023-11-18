@@ -1,0 +1,35 @@
+Mateusz Kurowski (75861)
+Norbert Ostrowski (78030) 
+
+Nazaw Pojektu: LogiCross: Gra Logiczna z Wyjątkowymi Funkcjami
+
+LogiCross to nowoczesna gra logiczna, inspirowana klasycznym krzyżówkami i kółkami. Znajdziesz w niej funkcje personalizacji, różne poziomy trudności oraz elementy wizualne i dźwiękowe, tworzące interaktywne doświadczenie w tradycyjnej formie gry.
+
+Lista funkcjonalności:
+
+1. Kolejność Ruchów: Ustalanie, który gracz zaczyna grę, a następnie zmiana kolejności po każdym ruchu.
+
+2. Sprawdzanie Wygranej: Sprawdzanie, czy któryś z graczy osiągnął trzy znaki w rzędzie (poziomo, pionowo lub na skos).
+
+3. Sprawdzanie Remisu: Sprawdzanie, czy plansza jest pełna (remis), gdy nie ma zwycięzcy.
+
+4. Restart Gry: Możliwość zresetowania gry po zakończeniu rozgrywki.
+
+5. Tryb Gracza Przeciwko Komputerowi: Implementacja trybu gry, w którym jeden z graczy to komputer.
+
+6. Różne Poziomy Trudności dla Komputera: Dodanie różnych poziomów trudności dla komputera (łatwy, średni, trudny).
+
+7. Statystyki Gry: Monitorowanie statystyk gry, takich jak liczba wygranych, remisów i porażek dla każdego gracza.
+
+8. Personalizacja Znaków Gracza: Pozwól graczom wybierać swoje znaki (np. kółka i krzyżyki, litery, symbole).
+
+9. Personalizacja Planszy: Możliwość dostosowania rozmiaru planszy (np. 4x4) dla większej trudności.
+
+10. Historia Ruchów: Zapisywanie historii ruchów, dzięki czemu gracze mogą cofać się do poprzednich kroków.
+
+11. Wizualne Efekty: Dodanie efektów wizualnych dla zwycięstwa, remisu i ruchów graczy.
+
+12. Dźwięki,Muzyka i wiedo końcowe: Dodanie dźwięków podczas ruchów i muzyki w tle oraz wideo dla każdego z graczy.
+
+
+Link do porjektu na GITHUB: https://github.com/Foxusiak-Mati/Projekt-Na-Zaliczenie-.git
