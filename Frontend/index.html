@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Galeria. Widzisz Fotki</title>
+    <style>
+        select {
+            position: fixed;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        label {
+            position: fixed;
+            bottom: 15px;
+            left: 39%;
+        }
+    </style>
+    <script src="main.html"></script>
+    <script src="cookies.js"></script>
+    <script src="Galeria.js"></script>
+</head>
+
+<body>
+
+    <button onclick="downloadAllImages()">Pobierz wszystkie zdjęcia</button>
+
+    <div class="container">
+        <div class="galeria-napis">Galeria Zdjęć Fotograficznych</div>
+
+        <div class="clock">
+            <p id="date"></p>
+            <p id="time"></p>
+        </div>
+
+        <div class="fire">
+            <div class="flames">
+                <div class="flame"></div>
+                <div class="flame"></div>
+                <div class="flame"></div>
+                <div class="flame"></div>
+            </div>
+            <div class="logs"></div>
+        </div>
+
+        <script>
+            const WEEK = ["Niedziela", "Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota"];
+
+            function updateTime() {
+                var now = new Date();
+
+                document.getElementById("time").innerText =
+                    zeroPadding(now.getHours(), 2) + ":" +
+                    zeroPadding(now.getMinutes(), 2) + ":" +
+                    zeroPadding(now.getSeconds(), 2);
+
+                document.getElementById("date").innerText =
+                    now.getFullYear() + "-" +
+                    zeroPadding(now.getMonth() + 1, 2) + "-" +
+                    zeroPadding(now.getDate(), 2) + " " +
+                    WEEK[now.getDay()];
+            }
+
+            updateTime();
+            setInterval(updateTime, 1000);
+
+            function zeroPadding(num, digit) {
+                return String(num).padStart(digit, '0');
+            }
+        </script>
+
+        <label for="imageSelect">Wybierz zdjęcie:</label>
+        <select id="imageSelect" onchange="changeImage()">
+            <option value="all">Wszystkie</option>
+            <option value="img1">Zdjęcie 1</option>
+            <option value="img2">Zdjęcie 2</option>
+            <option value="img3">Zdjęcie 3</option>
+            <option value="img4">Zdjęcie 4</option>
+            <option value="img5">Zdjęcie 5</option>
+            <option value="img6">Zdjęcie 6</option>
+            <option value="img7">Zdjęcie 7</option>
+        </select>
+
+        <script src="validation.js"></script>
+
+        <span class="slider" id="slider1"></span>
+        <span class="slider" id="slider2"></span>
+        <span class="slider" id="slider3"></span>
+        <span class="slider" id="slider4"></span>
+        <span class="slider" id="slider5"></span>
+        <span class="slider" id="slider6"></span>
+        <span class="slider" id="slider7"></span>
+
+        <div class="imgContainer">
+
+            <div class="slide_div" id="slide_1">
+                <img src="Zdjecia/P1040146.JPG" alt="" class="img" id="img1">
+                <a href="#slider1" class="button" id="button1"></a>
+            </div>
+            <div class="slide_div" id="slide_2">
+                <img src="Zdjecia/P1010860.JPG" alt="" class="img" id="img2">
+                <a href="#slider2" class="button" id="button2"></a>
+            </div>
+            <div class="slide_div" id="slide_3">
+                <img src="Zdjecia/P1030386.jpg" alt="" class="img" id="img3">
+                <a href="#slider3" class="button" id="button3"></a>
+            </div>
+            <div class="slide_div" id="slide_4">
+                <img src="Zdjecia/119123771_2768629976751334_4837277320945251361_n.jpg" alt="" class="img" id="img4">
+                <a href="#slider4" class="button" id="button4"></a>
+            </div>
+            <div class="slide_div" id="slide_5">
+                <img src="Zdjecia/P1030493.jpg" alt="" class="img" id="img5">
+                <a href="#slider5" class="button" id="button5"></a>
+            </div>
+            <div class="slide_div" id="slide_6">
+                <img src="Zdjecia/P1030530.jpg" alt="" class="img" id="img6">
+                <a href="#slider6" class="button" id="button6"></a>
+            </div>
+            <div class="slide_div" id="slide_7">
+                <img src="Zdjecia/P1030756.JPG" alt="" class="img" id="img7">
+                <a href="#slider7" class="button" id="button7"></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

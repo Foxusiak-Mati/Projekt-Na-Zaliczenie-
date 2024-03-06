@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Strona logowania</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+    }
+    #loginForm {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    }
+    input[type="text"],
+    input[type="password"],
+    button {
+        display: block;
+        margin-bottom: 10px;
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font-size: 16px;
+    }
+    button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    #loginMessage {
+        color: red;
+    }
+</style>
+
+</head>
+<body>
+    <form id="loginForm">
+        <input type="text" id="username" placeholder="Nazwa użytkownika" required>
+        <input type="password" id="password" placeholder="Hasło" required>
+        <button type="submit">Zaloguj się</button>
+    </form>
+    <div id="loginMessage"></div>
+
+    <!-- Przycisk do przekierowania na stronę główną -->
+    <a id="mainPageLink" style="display: none;" href="index.html">Przejdź do strony głównej</a>
+
+    <script>
+         // Sprawdź stan zalogowania przy ładowaniu strony
+    window.onload = function() {
+        var isLoggedIn = localStorage.getItem("isLoggedIn");
+        if (isLoggedIn === "true") {
+            // Użytkownik jest zalogowany, przekieruj na stronę główną
+            window.location.href = "main.html";
+        } else {
+            // Użytkownik nie jest zalogowany, wyświetl formularz logowania
+            document.getElementById("loginForm").style.display = "block";
+        }
+    };
+
+    // Obsługa logowania
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        // Prosta logika uwierzytelniania (tutaj admin/mojeSuperBezpieczneHaslo)
+        if (username === "admin" && password === "mojeSuperBezpieczneHaslo") {
+            // Logowanie udane
+            localStorage.setItem("isLoggedIn", "true"); // Ustaw flagę zalogowania w localStorage
+            // Pokaż przycisk do przejścia do strony głównej
+            document.getElementById("mainPageLink").style.display = "block";
+            // Uwzględnij kod, który przekieruje na stronę główną po kliknięciu przycisku
+        } else {
+            // Logowanie nieudane
+            document.getElementById("loginMessage").innerText = "Błędna nazwa użytkownika lub hasło";
+        }
+    });
+
+    // Obsługa wylogowania
+    document.getElementById("logoutButton").addEventListener("click", function() {
+        localStorage.setItem("isLoggedIn", "false"); // Wyczyść informacje o zalogowaniu z localStorage
+        window.location.href = "login.html"; // Przekieruj na stronę logowania po wylogowaniu
+    });
+    </script>
+    
+</body>
+</html>
